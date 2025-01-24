@@ -24,6 +24,10 @@ http://localhost:8080/api/transfers/optimal-route
   ]
 }
 
+example answer: 
+{"totalWeight":15,"totalCost":30,"selectedTransfers":[{"weight":5,"cost":10},{"weight":10,"cost":20}]}
+
+
 Instead of curl, i also used PowerShells' built-in Invoke-RestMethod for HTTP requests.
 Invoke-RestMethod -Uri "http://localhost:8080/api/transfers/optimal-route" -Method Post -Headers @{ "Content-Type" = "application/json" } -Body '{
   "maxWeight": 15,
@@ -34,3 +38,5 @@ Invoke-RestMethod -Uri "http://localhost:8080/api/transfers/optimal-route" -Meth
     { "weight": 8, "cost": 15 }
   ]
 }'
+
+example answer:   15        30 {@{weight=5; cost=10}, @{weight=10; cost=20}}
